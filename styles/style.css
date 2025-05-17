@@ -1,9 +1,16 @@
+:root {
+    --primary-color: #1F2041;
+    --secondary-color: #FFC857;
+    --teritary-color: #4B3F72;
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 .container {
     margin-top: 50px;

@@ -157,11 +157,3 @@ stopButton.addEventListener('click', () => {
     startButton.disabled = false;
     stopButton.disabled = true;
 });
-
-const footer = document.createElement('footer');
-footer.style.marginTop = '50px';
-footer.style.padding = '10px';
-footer.style.backgroundColor = '#ddd';
-footer.style.fontSize = '14px';
-footer.textContent = 'CC0 2025 - Work Meter by Ellie R';
-document.body.appendChild(footer);
