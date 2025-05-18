@@ -132,6 +132,15 @@ function initializeUI() {
         toggleButtons();
     });
 }
+/**
+ * Toggles the `disabled` state of the `startButton` and `stopButton` elements.
+ *
+ * If both `startButton` and `stopButton` are defined, this function inverts their
+ * current `disabled` property values.
+ *
+ * @remarks
+ * Assumes that `startButton` and `stopButton` are accessible in the current scope.
+ */
 function toggleButtons() {
     if (startButton && stopButton) {
         startButton.disabled = !startButton.disabled;
