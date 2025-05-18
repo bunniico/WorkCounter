@@ -12,24 +12,59 @@
         <link rel="stylesheet" href="./styles/style.css">
         <title>Work Meter</title>
     </head>
-    <header>
-        <h1>Work Meter</h1>
-        <sub>Estimate the cost of electricity based on your computer's power usage and time.</sub>
-        <hr>
-    </header>
     <body>
-        <div class="container">
-            <button id="startButton">Start</button>
-            <button id="stopButton" disabled>Stop</button>
-            <div class="output">
-                <p>Total Cost: <span id="cost">$0.0000</span></p>
-                <p>Cost per hour: <span id="costPerHour">$0.0000</span></p>
+        <header>
+            <img src="./images/WMFavicon.png" alt="Work Meter Logo" class="logo">
+            <h1>Work Meter</h1>
+            <sub>Estimate the cost of electricity based on your computer's power usage and time.</sub>
+        </header>
+        <div class="flex-grid">
+            <div class="col" style="flex: 1;">
+                    <div class="container">
+                        <h2>How to Use</h2>
+                        <p><u>To use <i><b>Work Meter</b></i> follow these simple steps!</u></p>
+                        <ol>
+                            <li>Enter the power usage of your computer in watts (W).</li>
+                            <li>Enter the cost per kilowatt-hour (kWh) in USD. <aside>ℹ️ In the USA, this ranges somewhere from $0.15 - $0.20 per kWh.</aside></li>
+                            <li>Press the "Start" button to begin tracking time.</li>
+                            <li>Press the "Pause" button to pause tracking.</li>
+                            <li>Press the "Reset" button to reset the timer.</li>
+                            <li>Press the "Stop" button to stop tracking and disable all buttons.</li>
+                        </ol>
+                </div>
+            </div>
+            <div class="col" style="flex: 1;">
+                <div class="container" style="margin-top: 0rem;">
+                    <h2>Control Panel</h2>
+                    <form id="form">
+                        <label for="powerUsage">Power Usage (W):
+                            <input type="number" id="powerUsage" name="powerUsage" value="600" min="0" max="9999" required>W/hr
+                        </label>
+                        <label for="costPerKWh">Cost per kWh:
+                            $<input type="number" id="costPerKWh" name="costPerKWh" value="0.15" min="0" max="100" step="0.01" required>/kWH
+                        </label>
+                    </form>
+                    <div class="flex-grid" style="margin: auto;">
+                        <div class="col"><button id="startButton">Start</button></div>
+                        <div class="col"><button id="pauseButton" disabled>Pause</button></div>
+                        <div class="col"><button id="resetButton" disabled>Reset</button></div>
+                        <div class="col"><button id="stopButton" disabled>Stop</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="flex: 1">
+                <div class="container">
+                <h2>Statistics</h2>
+                    <h3>Total Cost: <span id="costDisplay">$0.0000</span></h2>
+                        <h4>Time Elapsed: <i><span id="timeDisplay">Start the timer!</span></i></h3>
+                        <h4>Power Used: <i><span id="powerUsedDisplay">0</span></i> kWh</h3>
+                        <h4>Cost Per Hour: <i>$<span id="costPerHourDisplay">0.00</i></span></h4>
+                </div>
             </div>
         </div>
         <script src="./scripts/script.js"></script>
+        <footer>
+            <p>&copy; CC0 1.0 Universal | Created by Ellie R.</p>
+        </footer>
     </body>
-    <footer>
-        <hr>
-        <p>&copy; CC0 1.0 Universal | Created by Ellie R.</p>
-    </footer>
 </html>

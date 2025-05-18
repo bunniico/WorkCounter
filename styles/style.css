@@ -1,28 +1,173 @@
 :root {
     --primary-color: #1F2041;
     --secondary-color: #FFC857;
-    --teritary-color: #4B3F72;
+    --teritary-color: #212346;
+    --button-color: #FFC857;
+    --button-disabled: rgb(77, 78, 40);
+    --aside: #e4a527;
+}
+
+h1
+{
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    background-color: transparent;
+    text-shadow: 0.2px 0.2rem rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+h2
+{
+    text-shadow: 0.2px 0.2rem rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+sub
+{
+    vertical-align: super;
+    font-size: 1rem;
+    font-style: italic;
+    text-shadow: 0.1px 0.1rem rgba(0, 0, 0, 0.5);
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form *
+{
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    height: 100%;
     margin: 0;
     padding: 0;
     background-color: var(--primary-color);
     color: var(--secondary-color);
 }
-.container {
-    margin-top: 50px;
+
+header
+{
+    text-align: center;
+    background-color: transparent;
+    margin: auto;
+    padding: 2rem;
 }
+
+footer
+{
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: var(--secondary-color);
+    padding: 10px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0);
+    }
+    25% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    animation-name: pulse;
+    animation-duration: 400ms;
+    color: var(--primary-color);
+    background-color: var(--button-color);
+    border-color: var(--primary-color);
+    padding: 1rem 2rem;
+    font-size: 1rem;
     cursor: pointer;
-    margin: 10px;
+    margin: 1rem;
+    border-radius: 1rem;
+    border-style: solid;
 }
+
+ol {
+    text-align: left;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    list-style-type: "⚡";
+}
+
+ol li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+aside {
+    padding: 0.5rem 0 0 1rem;
+    margin: 0.5rem;
+    color: var(--aside);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+button:disabled {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    color: transparent;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+    min-height: 0;
+    font-size: 0;
+    margin: 0;
+    border-radius: 0;
+}
+
+.container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    width: auto;
+    padding: 2rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--teritary-color);
+    border-color: var(--secondary-color);
+    border-width: 0.2rem;
+    border-radius: 1rem;
+    border-style: solid;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
 .output {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
+}
+
+.flex-grid {
+    display: flex;
+}
+
+.col {
+    flex: 1;
 }
